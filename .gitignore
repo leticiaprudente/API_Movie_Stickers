@@ -1,10 +1,9 @@
 # Build and Maven
-**/target/
+/target/*
 /target/
-*/target/*
-.classpath
-.project
-.settings
+*.classpath
+*.project
+*.settings
 
 # Compiled class file
 *.class
