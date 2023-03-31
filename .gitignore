@@ -1,5 +1,6 @@
 # Build and Maven
-target/*
+target/
+target/classes/
 *.classpath
 *.project
 *.settings
