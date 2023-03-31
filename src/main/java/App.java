@@ -1,4 +1,6 @@
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -25,13 +27,21 @@ public class App {
         // exibir e manipular os dados
         for (Map<String,String> film : movieList) {
             System.out.println();
-            System.out.println(film.get("title"));
-            System.out.println(film.get("image"));
 
-            double rating = Double.parseDouble(film.get("imDbRating"));
-            double stars = (double) Math.round(rating / 2.0);
+            String urlImage = film.get("image");
+            String movieTitle = film.get("title") ;
+            //é necessário substituir o caracter ":" para não dar erro no nome do arquivo
+            String fileName = movieTitle.replace(":", " -")  + ".png";
+            double imDbRating = Double.parseDouble(film.get("imDbRating"));
+            InputStream inputStream = new URL(urlImage).openStream();
 
-            System.out.print("IMDb Rating: " + film.get("imDbRating") + " [");
+            StickerGenerator generate = new StickerGenerator() ;
+            generate.create(inputStream, fileName);
+
+            System.out.println(movieTitle);
+            //System.out.println(film.get("image"));
+            double stars = (double) Math.round(imDbRating / 2.0);
+            System.out.print("IMDb Rating: " + imDbRating + " [");
 
             for (int count = 0; count < 5; count++) {
                 if (count< stars) {
@@ -40,6 +50,7 @@ public class App {
             }
             System.out.print("]");
             System.out.println();
+
         }
     }
 }

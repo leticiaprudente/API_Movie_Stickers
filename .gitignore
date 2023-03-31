@@ -5,6 +5,10 @@
 *.project
 *.settings
 
+#Files
+Images/Output/
+Images/Output/*
+
 # Compiled class file
 *.class
 
