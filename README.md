@@ -25,14 +25,16 @@
 - Ler a URL de uma imagem a partir do JSON: [StickerGenerator.java](src/main/java/StickerGenerator.java)
 - Criar uma imagem com transparência e escrever um texto de recomendação
 - Gerar um Sticker de Whatsapp com a imagem gerada
-- Excluir ou limpar a pasta "Images/Output" toda vez que o programa for reiniciado
 
+### Resultados:
 ![result_lesson_02.png](Images/result_lesson_02.png)
 
 #### Melhorias a serem implantadas posteriormente:
 - Centralizar o texto da imagem 
 - Mudar o texto de acordo com a classificação (rating)
 - Deixar o tamanho da fonte proporcional ao tamanho da imagem
+- Excluir ou limpar a pasta "Images/Output" toda vez que o programa for reiniciado
+
 
 # Desenvolvedora
 
